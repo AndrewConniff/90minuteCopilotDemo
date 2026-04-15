@@ -195,3 +195,289 @@ Review this code for:
 - Copilot was used for planning, learning, coding, and review
 - The developer remained in control at all times
 - The same workflow works locally or in Codespaces
+
+- # Demo 2
+- Yes — here is **one single, continuous Markdown file** where **every “ask Copilot” is replaced with an explicit prompt**.  
+This is copy-once, paste-once, repo-ready.
+
+***
+
+```markdown
+# GitHub Copilot Codespaces Demo – Day in the Life
+
+## Goal
+Demonstrate a realistic end-to-end developer workflow using GitHub Copilot in Codespaces, from planning through implementation and review.
+
+---
+
+## Demo Constraints
+- Audience is experienced developers
+- No intro or tour content
+- Hands-on, narrative-driven demo
+- Everything happens in GitHub Codespaces
+- GitHub Copilot is used intentionally at every major step
+
+---
+
+## Phase 0 – Pre-Demo Setup
+- Create a GitHub repository named `copilot-codespaces-demo`
+- Branch: `main`
+- Repository can be empty or contain only a README
+
+README content:
+```
+
+Scenario: Build a simple API used by internal teams to manage feature requests.
+
+```
+
+---
+
+## Phase 1 – Planning with Planner (Outline the Work)
+
+### Step 1: Create a Plan
+- Open Planner
+- Create a new plan named:
+  **Feature Request API – Initial Build**
+
+### Step 2: Generate the Initial Work Outline
+In Copilot Chat, enter the following prompt:
+```
+
+We are starting a brand new software project.
+
+Context:
+
+*   Technology: ASP.NET Core Web API
+*   Runtime: .NET 8
+*   Development environment: GitHub Codespaces
+*   Goal: Build an internal API to manage feature requests
+
+Task:
+Outline all of the work required from initial setup through implementation and review.
+Group the work into logical phases that a developer would naturally follow.
+Do not write code yet.
+
+```
+
+### Step 3: Create Planner Tasks
+Use the Copilot-generated outline to create Planner tasks such as:
+- Project scaffolding
+- Review generated project structure
+- Create domain model
+- Implement in-memory data storage
+- Build CRUD API endpoints
+- Add validation and error handling
+- Add logging
+- Review and refine code
+
+---
+
+## Phase 2 – Create Work Items from the Plan
+
+- Open GitHub Issues
+- Create issues that correspond to the Planner tasks
+
+In Copilot Chat, use this prompt:
+```
+
+Based on the planning outline we created, generate GitHub Issue descriptions.
+
+Requirements:
+
+*   One issue per major task
+*   Clear title and short description
+*   Each issue should be scoped to a single responsibility
+*   Do not include implementation details yet
+
+```
+
+---
+
+## Phase 3 – Development Environment
+
+- From the repository, select:
+  Code → Codespaces → Create Codespace on main
+- Wait for Codespaces to finish initializing
+
+---
+
+## Phase 4 – Application Creation
+
+In Copilot Chat, enter:
+```
+
+We are ready to start coding.
+
+Task:
+Describe how to scaffold a new ASP.NET Core Web API targeting .NET 8 using minimal APIs.
+Explain what files and folders will be created and their purpose.
+
+```
+
+Then create the application:
+```
+
+dotnet new webapi -n FeatureApi
+cd FeatureApi
+
+```
+
+---
+
+## Phase 5 – Code Understanding
+
+- Open Program.cs
+
+In Copilot Chat, enter:
+```
+
+Explain what this Program.cs file is doing.
+
+Requirements:
+
+*   Use simple, clear language
+*   Assume the reader is an experienced developer new to this specific project
+*   Describe how the application starts and how requests are handled
+
+```
+
+---
+
+## Phase 6 – Feature Implementation
+
+### Data Model
+In Copilot Chat, enter:
+```
+
+Create a FeatureRequest domain model.
+
+Requirements:
+
+*   Properties:
+    *   Id (int)
+    *   Title (string)
+    *   Description (string)
+    *   Status (New, Active, Done)
+*   Follow C# and .NET best practices
+*   Keep the model simple and appropriate for an internal API
+
+```
+
+### In-Memory Storage
+In Copilot Chat, enter:
+```
+
+Add an in-memory data store for FeatureRequest items.
+
+Requirements:
+
+*   Suitable for demo and development purposes
+*   Explain where this should live in the project structure
+*   Explain why this approach is appropriate for now
+
+```
+
+### API Endpoints
+In Copilot Chat, enter:
+```
+
+Add minimal API endpoints for FeatureRequest management.
+
+Endpoints:
+
+*   GET all feature requests
+*   GET a feature request by id
+*   POST a new feature request
+*   PUT to update an existing feature request
+*   DELETE a feature request
+
+Requirements:
+
+*   Use clear route naming
+*   Return appropriate HTTP status codes
+
+```
+
+Optionally run the application:
+```
+
+dotnet run
+
+```
+
+---
+
+## Phase 7 – Iteration and Improvements
+
+### Validation
+In Copilot Chat, enter:
+```
+
+Improve the API by adding basic validation.
+
+Requirements:
+
+*   Validate required fields
+*   Return appropriate HTTP status codes and messages
+*   Keep the implementation simple and readable
+
+```
+
+### Logging
+In Copilot Chat, enter:
+```
+
+Add structured logging to the API.
+
+Requirements:
+
+*   Log create and update operations
+*   Use logging patterns that align with .NET best practices
+*   Explain briefly why these log points are useful
+
+```
+
+---
+
+## Phase 8 – Code Review
+
+In Copilot Chat, enter:
+```
+
+Review the current codebase.
+
+Focus areas:
+
+*   Readability
+*   Potential bugs or edge cases
+*   API design concerns
+
+Output:
+
+*   Suggestions only
+*   Do not rewrite the entire solution
+
+```
+
+---
+
+## Wrap-Up
+
+- Work started with planning before coding
+- Planner was used to outline and organize the work
+- Work items were created from the plan
+- Copilot assisted with planning, learning, coding, and review
+- The developer remained in control at all times
+- The same workflow works locally or in GitHub Codespaces
+```
+
+***
+
+If you want next, I can:
+
+*   Tune the **prompts to sound more natural when spoken live**
+*   Add **“what I say vs what I type”** separation
+*   Create a **short executive version** that stops after planning + scaffolding
+
+This is now **trainer‑grade and stage‑safe**.
