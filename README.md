@@ -481,3 +481,77 @@ If you want next, I can:
 *   Create a **short executive version** that stops after planning + scaffolding
 
 This is now **trainer‑grade and stage‑safe**.
+
+
+# Agent Mode 
+
+You are running in Agent mode inside a GitHub Codespace.
+
+Goal:
+Create a complete “Day in the Life” demo project from scratch for an enterprise developer audience. The demo must show realistic planning → work items → implementation → improvement → review.
+
+Hard requirements:
+- Everything happens inside this Codespace.
+- Use .NET 8 and an ASP.NET Core Web API with minimal APIs.
+- Create the application first (so Program.cs exists) before modifying it.
+- Keep the implementation simple, readable, and reliable for a live demo.
+- Prefer additive, incremental edits with clear commits or checkpoints.
+- If you need to choose between speed and clarity, choose clarity.
+- Do not introduce databases, auth, containers, or external services (keep it local + in-memory).
+
+What to produce:
+A) Repository structure and files:
+   - Create a folder "FeatureApi" containing the .NET 8 minimal API project
+   - Add a top-level README.md describing scenario, how to run, and endpoints
+   - Add a top-level DEMO.md containing the full step-by-step demo instructions (Planner → issues → codespaces → build → improve → review)
+
+B) Planning artifacts as markdown (since you cannot actually create Planner plans here):
+   - Create /docs/PLAN.md that contains:
+       1) A concise project outline (phases)
+       2) A task list representing the Planner plan
+   - Create /docs/ISSUES.md that contains:
+       - GitHub Issue titles + descriptions that map to the plan (one per major task)
+
+C) Application behavior:
+   - Implement a FeatureRequest domain model:
+       - Id (int)
+       - Title (string)
+       - Description (string)
+       - Status (New, Active, Done)
+   - Implement an in-memory store for FeatureRequest items
+   - Implement endpoints:
+       - GET /featurerequests
+       - GET /featurerequests/{id}
+       - POST /featurerequests
+       - PUT /featurerequests/{id}
+       - DELETE /featurerequests/{id}
+   - Return appropriate HTTP status codes (200/201/204/400/404)
+   - Add basic validation:
+       - Title required, min length 3
+       - Description optional but max length 1000
+       - Status must be one of allowed values
+   - Add structured logging for create and update operations
+
+D) Execution:
+   - Run dotnet restore/build/test (if tests exist)
+   - Run the API to confirm it starts successfully
+   - Provide a short “verification checklist” in README.md
+
+E) Code review output:
+   - Create /docs/REVIEW.md containing:
+       - 8–12 bullets of suggested improvements (readability, edge cases, API design) without rewriting the entire app
+
+Constraints:
+- Keep everything deterministic; do not use placeholders.
+- If you must make an assumption, write it down in /docs/ASSUMPTIONS.md.
+- Do not ask me questions unless the task cannot proceed without a decision; if so, present one default decision and continue.
+
+Now do the work end-to-end:
+1) Scaffold the project
+2) Generate the planning docs
+3) Implement the API
+4) Add validation + logging
+5) Verify the app runs
+6) Generate the demo docs (DEMO.md)
+7) Generate the review doc
+While you work, narrate briefly what you’re doing and why at each step.
