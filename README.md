@@ -6,13 +6,14 @@
 3. Create Copilot Space
 4. Attach Repository to Space
 5. Generate Application Plan
-6. Convert Plan to Issues
-7. Create Issues
-8. Create Project Board
-9. Create Sprint Structure
-10. Assign Issues to Sprints
-11. Execute Issues with Copilot (Agent Mode)
-12. Full Application Build Prompt (.NET Fluent UI)
+6. Let run and do VS Code Demo
+7. Convert Plan to Issues
+8. Create Issues
+9. Create Project Board
+10. Create Sprint Structure
+11. Assign Issues to Sprints
+12. Execute Issues with Copilot (Agent Mode)
+13. Full Application Build Prompt (.NET Fluent UI)
 
 ---
 
