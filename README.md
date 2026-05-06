@@ -239,9 +239,168 @@ Complete runnable modern web app.
 ```
 
 ---
+## Add Testrunner
+
+## Copilot Prompt: Add Testing, Run Tests, and Document Code
+
+You are working in an existing .NET (ASP.NET Core) web application.
+
+### Goal
+Add a complete testing solution, generate tests for the application, execute them, and improve code quality by adding clear comments.
+
+---
+
+### Tasks
+
+#### 1. Add Test Project
+- Create a new test project using:
+  - xUnit (preferred) or MSTest
+- Name it: `<solution-name>.Tests`
+- Ensure it is part of the solution
+- Add necessary NuGet packages for testing
+
+---
+
+#### 2. Generate Tests
+Create comprehensive unit and integration tests for:
+
+- Controllers
+  - API endpoints (GET, POST, PUT, DELETE)
+  - Status codes and responses
+- Services
+  - Business logic validation
+- Data Layer
+  - CRUD operations
+- Edge Cases
+  - Invalid inputs
+  - Empty states
+
+Each test should include:
+- Arrange / Act / Assert structure
+- Meaningful test names
+- Assertions for correctness
+
+---
+
+#### 3. Add Test Data
+- Create mock or seeded data
+- Use in-memory database for testing where applicable
+
+---
+
+#### 4. Execute Tests
+- Run all tests using the built-in .NET test runner
+- Capture:
+  - Passed tests
+  - Failed tests
+  - Execution summary
+
+---
+
+#### 5. Output Results
+- Display test results clearly in the terminal
+- Summarize:
+  - Total tests
+  - Passed
+  - Failed
+  - Any errors encountered
+
+---
+
+#### 6. Improve Code with Comments
+Add comments to all code files:
+
+- Controllers:
+  - Describe endpoints and purpose
+- Services:
+  - Explain logic and flow
+- Models:
+  - Describe fields and data usage
+- Startup/Program:
+  - Explain configuration
+
+Guidelines:
+- Use concise, meaningful comments
+- Avoid redundant explanations
+- Focus on clarity and maintainability
+
+---
+
+### Deliverables
+- Fully working test project
+- All tests written and passing
+- Codebase updated with clear comments
+- Output showing test execution results
+
+---
+
+### Final Step
+After completion:
+- Confirm all tests pass
+- Show test summary output
+- Ensure solution builds successfully
+
+## Copilot Prompt: Generate Application Architecture Map and Update README
+
+You are working in an existing .NET web application.
+
+### Goal
+Create a clear architecture diagram of the application and add it to the README using Mermaid diagrams.
+
+---
+
+### Tasks
+
+#### 1. Analyze Application Structure
+Identify:
+- Frontend (UI / Blazor / Razor)
+- Controllers / API layer
+- Services layer
+- Data access layer
+- Database
+
+---
+
+#### 2. Create Application Architecture Diagram
+
+Generate a Mermaid diagram that shows:
+
+- User → UI → Controllers → Services → Data Layer → Database
+- Flow of requests between components
+- Logical layering
+
+Use this format:
+
+```mermaid
+flowchart TD
+    User --> UI
+    UI --> Controller
+    Controller --> Service
+    Service --> Data
+    Data --> Database
+
+Key application components
+Relationships between modules
+Frontend vs Backend separation
+```
+#### 3. Generate a second Mermaid diagram showing:
+
+```mermaid
+graph TD
+    UI[Frontend UI]
+    API[API Controllers]
+    Services[Business Services]
+    DB[(Database)]
+
+    UI --> API
+    API --> Services
+    Services --> DB
+ ```
 
 ## Workflow Summary
 
 ```
+
+
 Repository → Codespaces → Space → Plan → Issues → Project → Sprints → Execution
 ```
